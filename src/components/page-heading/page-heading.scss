@@ -1,0 +1,67 @@
+@use '../../assets/scss/' as * ;
+
+.page-heading {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    text-transform: uppercase;
+
+    &__title {
+        position: relative;
+        font-size: 7rem;
+        letter-spacing: 20px;
+        font-weight: 900;
+        color: $gray;
+        z-index: -1; 
+
+    }
+
+    &__page {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        font-size: 3rem;
+        color: $white;
+        letter-spacing: 5px;
+        
+        span {
+            color: $primary;
+        }
+    }
+
+    @include mobile {
+        
+        &__title {
+            font-size: 3rem;        
+        }
+    
+        &__page {
+            font-size: 1.3rem;
+        }
+    }
+
+    
+}
+
+
+
+
+.App.active {
+    .page-heading {
+    
+        &__title {
+            color: $gray-bg2;
+            z-index: 1;
+
+        }
+    
+        &__page {
+
+            color: $txt-bg2;
+            span {
+                color: $primary-bg2 ;
+            }
+        } 
+     }
+    
+}

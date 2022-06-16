@@ -1,0 +1,208 @@
+@use '../../assets/scss/' as * ;
+
+.about {
+
+    .page-heading__page {
+        left: 20%;
+    }
+
+    .content {
+        padding: 0 60px;
+        width: 100%;
+        display: flex;
+
+        &-info {
+            width: 50%;
+            p {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+
+            .infos {
+                display: flex;
+                flex-wrap: wrap;
+                
+
+                &__item {
+                    margin-bottom: 20px;
+                    width: 40%;
+                    font-weight: 600;
+                    color: $white;
+
+                    span {
+                        color: #BCBCBC;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        &-more {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            
+
+            &__item {
+                width: 40%;
+                height: 150px;
+                margin: 0 20px 40px 20px ;
+                border: 1px solid $primary;
+                border-radius: 10px;
+                padding: 30px;
+
+                h1 {
+                    color: $primary;
+                }
+
+                span {
+                    font-size: 1rem;
+                    font-weight: 300;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        background-color: $primary;
+                        height: 2px;
+                        width: 30px;
+                    }
+            
+                    p {
+                        padding-left: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-skills {
+        padding: 50px;
+
+        
+        h2 {
+            text-align: center;
+        }
+
+        &__icons {
+
+            margin: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            &-wrapper {
+                width: 33%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 50px;
+                flex-direction: column;
+                text-transform: uppercase;
+                font-weight: 600;
+
+                * ~ * {
+                    margin-top: 20px;
+                }
+            }
+
+            &-item {
+                width: 120px;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #252525;
+                border-radius: 50%;
+                transition: all .3s ease-in;
+
+
+
+                img {
+                    width: 70px;
+                }
+            }
+
+            &-item:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    @include mobile {
+
+        .content {
+            padding: 30px;
+            
+            flex-direction: column;
+            
+            &-info {
+                width: 100%;
+
+                .infos {
+                    &__item {
+                        width: 50%;
+                        font-size: 90%;
+                    }
+                }
+
+            }
+
+            &-more { 
+
+                &__item {
+                    width: 45%;
+                    margin: 10px 8px ;
+                    span {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+
+        .about-skills__icons-wrapper {
+            width: 50%;
+        }
+    }
+
+}
+
+
+
+.App.active {
+    .about {
+        .infos__item{
+            color: $txt-bg2--bold;
+    
+            span {
+                color: $txt-bg2;       
+            }
+ 
+        }
+        
+    
+        .content-more {
+            &__item {
+                border: 1px solid $primary-bg2;
+    
+                h1 {
+                    color: $primary-bg2;
+                }
+
+                span {
+                    &::after {
+                        background-color: $primary-bg2;
+                    }
+                }
+    
+            }
+        }
+
+        .about-skills__icons-item {
+            background-color: $gray-bg2;
+        }
+
+        
+    }
+}

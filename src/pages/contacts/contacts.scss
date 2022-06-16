@@ -1,0 +1,171 @@
+@use '../../assets/scss/' as * ;
+
+.contact {
+    &-content {
+        display: flex;
+        padding: 0 90px 50px;
+
+        .infor {
+            width: 30%;
+
+            & > p {
+                margin: 20px 0;
+            }
+
+            ul > li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                .infor-icon {
+                    font-size: 1.8rem;
+                    margin-right: 10px;
+                    color: $primary;
+                }
+
+                p {
+                    color: $txt-bg2;
+                }
+            }
+
+            .social {
+                display: flex;
+                &-item {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: $gray;
+                    font-size: 1.2rem;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .3s ease-in;
+                    margin-right: 10px;
+                }
+
+                &-item:hover {
+                    background-color: $primary;
+                    color: $black;
+                }
+            }
+        }
+    
+        .form {
+
+            margin-left: 30px;
+            width: 70%;
+
+            & > * ~ * {
+                margin-top: 30px;
+            }
+
+            input, textarea {
+                color: $white;
+                background-color: $gray;
+                border-radius: 30px;
+                padding-left: 30px;
+                font-size: 1.2rem;
+
+                &:focus {
+                    outline: 1px solid $primary;  
+                }
+            }
+
+            input {
+                height: 50px;
+                width: 100%;
+            }
+
+            textarea {
+                height: 200px;
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            .form__infor {
+                display: flex;
+                
+                * ~ * {
+                    margin-left: 30px;
+                }
+            }
+
+        }
+    }
+}
+
+@include mobile {
+    .contact {
+        &-content {
+            padding: 0 10px;
+            flex-direction: column;
+            
+            .infor {
+                width: 100%;
+                margin: 30px 0;
+                align-items: start;
+            }
+
+            .form {
+                width: 100%; 
+                margin-left: 0;
+                padding-bottom  : 150px;
+                display: flex;
+                flex-direction: column;
+
+
+                .form__infor{
+                    flex-direction: column;
+                    * ~ * {
+                        margin-left: 0px;
+                        margin-top: 20px;
+                    }
+                }
+
+                input {
+                    height: 40px;
+                }
+
+                textarea {
+                    height: 150px;
+                }
+
+                input , textarea {
+                    font-size: 0.8rem;
+                }
+
+                .btn {
+                    margin: 20px auto;
+                }
+
+            }
+        }
+    }
+}
+
+
+.App.active {
+    .contact {
+        .infor-icon {
+            color: $primary-bg2;
+        }
+        .social-item {
+            background-color: $gray-bg2;
+
+            &:hover {
+                background-color: $primary-bg2;
+                color: $white;
+            }
+        }
+        input , textarea {
+            background-color: $gray-bg2;
+            color: $txt-bg2;
+
+            &:focus {
+                outline: 1px solid $primary-bg2;  
+            }
+        }
+
+    }
+}

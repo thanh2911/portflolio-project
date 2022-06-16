@@ -1,0 +1,148 @@
+@use "../../assets/scss/" as *;
+
+.nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+
+    &-item {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        color: $white;
+        background-color: $gray;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 
+            opacity .5s ease-in;
+        cursor: pointer;
+
+    }
+
+    & * ~ * {
+        margin-top: 20px;
+    }
+
+    &-item:hover {
+        background-color: $primary;
+        border-radius: 0;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    &-item.active {
+        background-color: $primary;
+    }
+
+    &-display {
+        position: absolute;
+        right: 40px;
+        top: 0;
+
+        width: 120px;
+        height: 50px;
+        line-height: 50px;
+
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: right;
+        padding: 0 30px 0 20px;
+
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        background-color: $primary;
+        opacity: 0;
+        display: none;
+
+    }
+
+    &-item:hover  &-display {
+        display: block;
+        opacity: 1;
+    }
+
+    @include mobile {
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateX(0);
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        height: $nav-height--mb;
+        background-color: #6F6F6F;
+
+        & * ~ * {
+            margin-top: 0;
+        }
+        
+        &-item:hover {
+            border-radius: 50%;
+        }
+
+        &-item:hover  &-display {
+            display: none;
+        }
+    }
+}
+
+.toggle-theme {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: $gray;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon2 {
+        display: none;
+    }
+}
+
+.App.active {
+    .nav {
+
+        &-item {
+            background-color: $gray-bg2;
+            color: $black;
+        }
+
+        &-display {
+            background-color: $primary-bg2 ;
+        }
+
+        &-item.active , &-item:hover{
+            background-color: $primary-bg2;
+            color: $white;
+        }     
+    }
+
+    .toggle-theme {
+        background-color: $gray-bg2;
+        color: $black;
+        &__icon1 {
+            display: none;
+        }
+        &__icon2 {
+            display: block;
+        }
+    }
+}
+
