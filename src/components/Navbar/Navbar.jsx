@@ -51,7 +51,6 @@ const Navbar = () => {
   return (
 
     <>
-
       <div ref={toggleRef} className="toggle-theme" onClick={ToggleTheme} >
         <div className="toggle-theme__icon1">
           <FaLightbulb />
@@ -73,6 +72,7 @@ const Navbar = () => {
 
                 </Link>
             </div>
+            
           ))
         }
     </div>
